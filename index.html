@@ -8,101 +8,91 @@
 <meta property="og:title" content="Cardboard Compass">
 <meta property="og:description" content="Know what your cards are worth in Australia. Prices in AUD across 8 trading card games. Launching soon.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://cardboard-compass.github.io/logo.jpg">
+<meta name="theme-color" content="#2FD4C6">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2310362B'/%3E%3Cpath d='M32 8 L40 32 L32 56 L24 32 Z' fill='%23E8B84A'/%3E%3Cpath d='M32 32 L40 32 L32 56 L24 32 Z' fill='%23F3F6F2'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --playmat:#10362B;   /* deep felt green, like a tournament playmat */
-  --felt:#18513F;
-  --foil:#E8B84A;      /* holo/foil gold */
-  --stock:#F3F6F2;     /* card stock white */
-  --ink:#0D1C17;
-  --mist:#A9C2B8;
-  --radius-card:14px;
+  --teal:#2FD4C6;      /* compass star turquoise, from the logo */
+  --teal-deep:#1C8F86;
+  --black:#000;
+  --kraft:#D6AA79;     /* cardboard */
+  --kraft-pale:#F4E9DA;
+  --paper:#FFFFFF;
+  --grey:#4A4A4A;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--playmat);color:var(--stock);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6}
+body{margin:0;background:var(--paper);color:var(--black);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--foil);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--teal-deep);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:24px;padding-right:24px}
+img{max-width:100%;height:auto;display:block}
 
 /* Header */
-header{padding:22px 0}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
-.brand svg{width:34px;height:34px}
+header{padding:18px 0;border-bottom:4px solid var(--black)}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.01em}
+.brand img{width:44px;height:44px}
 
 /* Hero */
-.hero{display:grid;padding-left:24px;padding-right:24px;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:40px;padding-bottom:88px}
-h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.98;letter-spacing:-.035em;margin:0 0 22px;max-width:12ch}
-.lede{font-size:1.2rem;color:var(--mist);max-width:44ch;margin:0 0 32px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:72px}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:.98;letter-spacing:-.035em;margin:0 0 22px;max-width:12ch}
+.lede{font-size:1.2rem;color:var(--grey);max-width:44ch;margin:0 0 30px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid var(--foil)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:3px solid var(--black)}
 .btn svg{width:20px;height:20px}
-.btn.primary{background:var(--foil);color:var(--ink)}
-.btn.primary:hover{background:#f2c862}
-.btn.ghost{color:var(--foil)}
-.btn.ghost:hover{background:rgba(232,184,74,.1)}
-.note{margin-top:18px;font-size:.95rem;color:var(--mist)}
+.btn.primary{background:var(--teal);box-shadow:4px 4px 0 var(--black)}
+.btn.primary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black)}
+.btn.ghost{background:var(--paper)}
+.btn.ghost:hover{background:var(--kraft-pale)}
+.note{margin-top:18px;font-size:.95rem;color:var(--grey)}
+.hero-logo{justify-self:center;max-width:460px;width:100%}
 
-/* The fanned hand of cards — the one memorable thing */
-.hand{position:relative;height:430px}
-.card{position:absolute;left:50%;bottom:30px;width:178px;height:248px;margin-left:-89px;border-radius:var(--radius-card);background:var(--stock);color:var(--ink);transform-origin:50% 120%;box-shadow:0 18px 30px -12px rgba(0,0,0,.55);padding:12px;display:flex;flex-direction:column;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.card .art{flex:1;border-radius:8px;background:var(--felt);position:relative;overflow:hidden}
-.card .art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 10px,transparent 10px 20px)}
-.card .name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.95rem;margin-top:10px;line-height:1.2}
-.card .price{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;font-size:.85rem;color:#3d5a50}
-.card .price b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;color:var(--ink)}
-.hand.ready .c1{transform:rotate(-22deg) translateX(-20px)}
-.hand.ready .c2{transform:rotate(-8deg)}
-.hand.ready .c3{transform:rotate(8deg)}
-.hand.ready .c4{transform:rotate(22deg) translateX(20px)}
-.card.c4 .art{background:linear-gradient(140deg,#2b6b55,#e8b84a 55%,#7b5fd1)}
-.needle{position:absolute;left:50%;top:70px;width:64px;height:64px;margin-left:-32px;border-radius:50%;background:var(--stock);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);z-index:5}
-.needle svg{width:46px;height:46px;transition:transform 1.2s cubic-bezier(.3,1.6,.4,1)}
-.hand.ready .needle svg{transform:rotate(28deg)}
-
-/* Sections */
-section{padding:72px 0;border-top:1px solid rgba(169,194,184,.18)}
-h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.05;letter-spacing:-.025em;margin:0 0 14px;max-width:20ch}
-.sub{color:var(--mist);max-width:56ch;margin:0 0 40px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.features h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;margin:14px 0 8px;letter-spacing:-.01em}
-.features p{margin:0;color:var(--mist);max-width:34ch}
-.features svg{width:40px;height:40px;color:var(--foil)}
+/* Kraft band: the cardboard of the logo carries into the page */
+.band{background:var(--kraft);border-top:4px solid var(--black);border-bottom:4px solid var(--black);background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 9px)}
+section{padding:72px 0}
+h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.05;letter-spacing:-.025em;margin:0 0 14px;max-width:20ch}
+.sub{max-width:56ch;margin:0 0 40px}
+.band .sub{color:#2a1f12}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature{background:var(--paper);border:3px solid var(--black);border-radius:16px;padding:24px}
+.feature h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;margin:12px 0 6px;letter-spacing:-.01em}
+.feature p{margin:0;color:var(--grey)}
+.feature svg{width:40px;height:40px}
 
 .games{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0}
-.games li{background:var(--stock);color:var(--ink);font-weight:700;padding:12px 18px;border-radius:10px;font-size:1rem}
+.games li{background:var(--kraft-pale);border:2px solid var(--black);font-weight:700;padding:10px 18px;border-radius:10px}
 
-.closing{background:var(--felt);border-radius:24px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
-.closing h2{margin-bottom:10px}
-.closing p{margin:0;color:var(--mist);max-width:46ch}
+.closing{background:var(--black);color:var(--paper);border-radius:24px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.closing h2{margin-bottom:10px;color:var(--teal)}
+.closing p{margin:0;max-width:46ch;color:#d9d9d9}
 .closing .actions{justify-content:flex-end}
+.closing .btn{border-color:var(--teal)}
+.closing .btn.primary{color:var(--black);box-shadow:none}
+.closing .btn.ghost{background:transparent;color:var(--teal)}
 
-footer{padding:40px 0 56px;color:var(--mist);font-size:.88rem}
+footer{padding:40px 0 56px;color:var(--grey);font-size:.88rem;border-top:1px solid #e5e5e5}
 footer p{max-width:80ch;margin:0 0 8px}
 
 @media (max-width:860px){
-  .hero{grid-template-columns:1fr;padding-top:16px;gap:8px}
-  .hand{height:340px;order:-1}
-  .needle{top:40px}
-  .card{width:140px;height:196px;margin-left:-70px}
-  .features{grid-template-columns:1fr;gap:28px}
+  .hero{grid-template-columns:1fr;padding-top:28px;gap:24px}
+  .hero-logo{order:-1;max-width:300px}
+  .features{grid-template-columns:1fr}
   .closing{grid-template-columns:1fr;padding:32px 24px}
   .closing .actions{justify-content:flex-start}
 }
-@media (prefers-reduced-motion:reduce){
-  .card,.needle svg{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
     <a class="brand" href="./" aria-label="Cardboard Compass home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F3F6F2"/><path d="M32 8 L40 32 L32 56 L24 32 Z" fill="#E8B84A"/><path d="M32 32 L40 32 L32 56 L24 32 Z" fill="#10362B"/></svg>
+      <img src="icon.jpg" alt="" width="44" height="44">
       Cardboard Compass
     </a>
   </div>
@@ -125,39 +115,34 @@ footer p{max-width:80ch;margin:0 0 8px}
       </div>
       <p class="note">The app is launching soon. Follow along to hear the day it goes live.</p>
     </div>
-
-    <div class="hand" id="hand" aria-hidden="true">
-      <div class="needle"><svg viewBox="0 0 48 48"><path d="M24 4 L30 24 L24 44 L18 24 Z" fill="#E8B84A"/><path d="M24 24 L30 24 L24 44 L18 24 Z" fill="#10362B"/><circle cx="24" cy="24" r="3" fill="#F3F6F2"/></svg></div>
-      <div class="card c1"><div class="art"></div><div class="name">Your binder</div><div class="price"><span>Total</span><b>$1,284</b></div></div>
-      <div class="card c2"><div class="art"></div><div class="name">Booster pull</div><div class="price"><span>Market</span><b>$46.50</b></div></div>
-      <div class="card c3"><div class="art"></div><div class="name">Trade night find</div><div class="price"><span>Market</span><b>$12.80</b></div></div>
-      <div class="card c4"><div class="art"></div><div class="name">The chase card</div><div class="price"><span>Market</span><b>$389</b></div></div>
-    </div>
+    <img class="hero-logo" src="logo.jpg" alt="Cardboard Compass logo: a turquoise and black compass star over a cardboard compass rose" width="1000" height="933">
   </div>
 
-  <section>
-    <div class="wrap">
-      <h2>One place for your whole collection</h2>
-      <p class="sub">Most price guides quote US dollars and US sales. Cardboard Compass is built around the Australian market.</p>
-      <div class="features">
-        <div>
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M24 14c-1-1.5-2.6-2-4.2-2-2.6 0-4.3 1.4-4.3 3.4 0 4.8 9 2.6 9 7.4 0 2.1-1.9 3.6-4.6 3.6-1.9 0-3.6-.7-4.6-2.2M20 9v3M20 27v4"/></svg>
-          <h3>Prices in AUD</h3>
-          <p>See what cards sell for here, not a converted US price with the shipping left out.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="7" y="5" width="20" height="28" rx="3"/><rect x="13" y="9" width="20" height="28" rx="3" fill="#10362B"/></svg>
-          <h3>Track your collection</h3>
-          <p>Add your cards and watch what your binder is worth over time.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 13V8a2 2 0 0 1 2-2h5M27 6h5a2 2 0 0 1 2 2v5M34 27v5a2 2 0 0 1-2 2h-5M13 34H8a2 2 0 0 1-2-2v-5"/><rect x="14" y="11" width="12" height="18" rx="2"/></svg>
-          <h3>Scan to add</h3>
-          <p>Point your phone at a card instead of typing in set names and numbers.</p>
+  <div class="band">
+    <section>
+      <div class="wrap">
+        <h2>One place for your whole collection</h2>
+        <p class="sub">Most price guides quote US dollars and US sales. Cardboard Compass is built around the Australian market.</p>
+        <div class="features">
+          <div class="feature">
+            <svg viewBox="0 0 40 40" fill="none" stroke="#000" stroke-width="2.5" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="#2FD4C6"/><path d="M24 14c-1-1.5-2.6-2-4.2-2-2.6 0-4.3 1.4-4.3 3.4 0 4.8 9 2.6 9 7.4 0 2.1-1.9 3.6-4.6 3.6-1.9 0-3.6-.7-4.6-2.2M20 9v3M20 27v4"/></svg>
+            <h3>Prices in AUD</h3>
+            <p>See what cards sell for here, not a converted US price with the shipping left out.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 40 40" fill="none" stroke="#000" stroke-width="2.5" aria-hidden="true"><rect x="7" y="5" width="20" height="28" rx="3" fill="#D6AA79"/><rect x="13" y="9" width="20" height="28" rx="3" fill="#2FD4C6"/></svg>
+            <h3>Track your collection</h3>
+            <p>Add your cards and watch what your binder is worth over time.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 40 40" fill="none" stroke="#000" stroke-width="2.5" aria-hidden="true"><path d="M6 13V8a2 2 0 0 1 2-2h5M27 6h5a2 2 0 0 1 2 2v5M34 27v5a2 2 0 0 1-2 2h-5M13 34H8a2 2 0 0 1-2-2v-5"/><rect x="14" y="11" width="12" height="18" rx="2" fill="#2FD4C6"/></svg>
+            <h3>Scan to add</h3>
+            <p>Point your phone at a card instead of typing in set names and numbers.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <section>
     <div class="wrap">
@@ -176,7 +161,7 @@ footer p{max-width:80ch;margin:0 0 8px}
     </div>
   </section>
 
-  <section>
+  <section style="padding-top:0">
     <div class="wrap">
       <div class="closing">
         <div>
@@ -200,7 +185,7 @@ footer p{max-width:80ch;margin:0 0 8px}
 </footer>
 
 <script>
-// Social links — fill these in once the Page and account exist.
+// Social links: fill these in once the Page and account exist.
 const LINKS = {
   facebook: "",
   instagram: ""
@@ -211,7 +196,6 @@ document.querySelectorAll("[data-link]").forEach(a => {
   else { a.hidden = true; }
 });
 document.getElementById("year").textContent = new Date().getFullYear();
-requestAnimationFrame(() => setTimeout(() => document.getElementById("hand").classList.add("ready"), 150));
 </script>
 </body>
 </html>
